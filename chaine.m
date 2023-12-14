@@ -1,5 +1,6 @@
 %--- Chaine de transmission numérique en bande e base
-clc;close all;
+clc; close all; clear;
+
 %--parametre de simulation
 fe=200e3;%Frequence echantillange
 dt=1/fe; %pad d'echantillange 
@@ -45,7 +46,7 @@ xlim([0 30]); grid on;
 
 %--Comparaison des donnees et clacul de TEB--%
 vec_err =xor(data_tx, data_tx);
-subplot(411); stem(t/T, data_rx);
+subplot(411); stem(t/T, vec_err);
 xlim([0 30]); grid on;
 
 Nerr = sum(vec_err);
